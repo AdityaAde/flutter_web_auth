@@ -74,11 +74,6 @@ class FlutterWebAuthPlugin(private var context: Context? = null, private var cha
           if (preferEphemeral) {
               intent.intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
           }
-
-          if (preferWeb) {
-              serviceIntent.setPackage("com.android.chrome")
-          }
-
           intent.intent.putExtra("android.support.customtabs.extra.KEEP_ALIVE", keepAliveIntent)
           intent.launchUrl(context!!, url)
         }
